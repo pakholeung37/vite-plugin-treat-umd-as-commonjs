@@ -1,0 +1,14 @@
+{
+  "name": "playground",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "vite-plugin-treat-umd-as-commonjs": "0.1.0"
+  },
+  "devDependencies": {
+    "vite": "^2.0.0"
+  }
+}
