@@ -6,7 +6,7 @@ export function treatAsCommonjs(options?: {
 }): Plugin {
   const { include, exclude } = options ?? {}
   const filter = createFilter(
-    include || /node_modules\/.*\.[jt]sx?$/,
+    include || /node_modules\/.*\.[jt]sx?/,
     exclude || []
   );
 
@@ -16,15 +16,7 @@ export function treatAsCommonjs(options?: {
     apply: 'serve',
     transform(code, id) {
       if (!filter(id)) return null;
-      const patterns = [
-        `typeof define === 'function' && define.amd`,
-        `typeof define === "function" && define.amd`,
-        `"function"==typeof define&&define.amd`,
-      ]
-      patterns.forEach((pattern) => {
-        code = code.replace(new RegExp(pattern, 'g'), ' false ')
-      })
-
+      code = `var define = false;\n` + code
       return {
         code,
       }
