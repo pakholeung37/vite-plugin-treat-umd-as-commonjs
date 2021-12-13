@@ -16,7 +16,7 @@ module.exports = defineConfig({
 });
 ```
 
-It will simple replace all `typeof define === 'function' && define.amd` like patterns to `false` in node_modules by default which avoid the browser requireJS/amd environment to register the module to amd. You can also specifically include or exclude pattern.
+It will simple add `var define = false;` in modules from node_modules by default which avoid the browser requireJS/amd environment to register the module to amd. You can also specifically include or exclude pattern.
 
 ## Options
 
