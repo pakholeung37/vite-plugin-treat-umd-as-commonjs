@@ -1,6 +1,6 @@
 {
   "name": "vite-plugin-treat-umd-as-commonjs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "resolve some edge cases when using requireJS/amd  in browser with vite",
   "main": "lib/index.js",
   "types": "./lib/index.d.ts",
