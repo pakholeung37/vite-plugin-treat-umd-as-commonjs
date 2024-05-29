@@ -6,7 +6,7 @@ export function treatAsCommonjs(options?: {
 }): Plugin {
   const { include, exclude } = options ?? {}
   const filter = createFilter(
-    include || /node_modules\/.*\.[jt]sx?/,
+    include || /node_modules\/.*\.[jt]sx?(\?.*)?$/,
     exclude || []
   );
 
